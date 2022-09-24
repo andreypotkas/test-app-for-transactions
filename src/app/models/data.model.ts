@@ -18,3 +18,10 @@ export interface ITransactionList {
   total: number;
   data: ITransaction[];
 }
+
+export enum Type {
+  income = 'income',
+  outcome = 'outcome',
+  loan = 'loan',
+  investment = 'investment',
+}
