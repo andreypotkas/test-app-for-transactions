@@ -1,0 +1,30 @@
+<!-- nav tabs -->
+<ul class="nav nav-tabs text-center">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page">Income</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link">Outcome</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link">Loans</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link">Investments</a>
+  </li>
+</ul>
+<!-- list items -->
+<ul class="list-group list-group-flush">
+  <li class="container list-group-item">
+    <div class="row">
+      <div class="col-sm text-center">Name</div>
+      <div class="col-sm text-center">Account</div>
+    </div>
+  </li>
+  <li class="container list-group-item" *ngFor="let item of [1, 2, 3, 4, 5]">
+    <div class="row">
+      <div class="col-sm text-center">{{ item }}</div>
+      <div class="col-sm text-center">value</div>
+    </div>
+  </li>
+</ul>
