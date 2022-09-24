@@ -31,13 +31,20 @@
   <li class="container list-group-item">
     <div class="row">
       <div class="col-sm text-center">Name</div>
-      <div class="col-sm text-center">Account</div>
+      <div class="col-sm text-center">Amount</div>
     </div>
   </li>
-  <li class="container list-group-item" *ngFor="let item of [1, 2, 3, 4, 5]">
+
+  <li
+    class="container list-group-item"
+    *ngFor="let item of data | filter: currentRoute"
+  >
     <div class="row">
-      <div class="col-sm text-center">{{ item }}</div>
-      <div class="col-sm text-center">value</div>
+      <div class="col-sm text-center">
+        {{ item.name.first }} {{ item.name.last }}
+      </div>
+      <div class="col-sm text-center">{{ item.amount }}</div>
+      <!-- here can be any prop to display -->
     </div>
   </li>
 </ul>

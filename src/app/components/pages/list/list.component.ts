@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ITransaction, ITransactionList } from 'src/app/models/data.model';
 import { DataService } from 'src/app/services/data.service';
 import { map } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterConfigOptions } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -10,10 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  public data!: ITransaction[];
-  public firstNavAction: boolean = false;
-
-  constructor(private dataService: DataService, private router: Router) {}
+  public data: ITransaction[] = [];
+  public currentRoute: string = '0';
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.dataService
@@ -22,5 +24,9 @@ export class ListComponent implements OnInit {
       .subscribe((data: ITransaction[]) => {
         this.data = data;
       });
+    // subscribe on changing queryparams and update currentRoute value, then it goes to pipe in template
+    this.route.queryParams.subscribe((data: any) => {
+      this.currentRoute = data['tab'];
+    });
   }
 }
