@@ -1,18 +1,31 @@
 <!-- nav tabs -->
-<ul class="nav nav-tabs text-center">
+<ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page">Income</a>
+    <a
+      class="nav-link"
+      routerLink="/navigator"
+      [queryParams]="{ tab: '0' }"
+      aria-current="page"
+      >Income</a
+    >
   </li>
   <li class="nav-item">
-    <a class="nav-link">Outcome</a>
+    <a class="nav-link" routerLink="/navigator" [queryParams]="{ tab: '1' }"
+      >Outcome</a
+    >
   </li>
   <li class="nav-item">
-    <a class="nav-link">Loans</a>
+    <a class="nav-link" routerLink="/navigator" [queryParams]="{ tab: '2' }"
+      >Loans</a
+    >
   </li>
   <li class="nav-item">
-    <a class="nav-link">Investments</a>
+    <a class="nav-link" routerLink="/navigator" [queryParams]="{ tab: '3' }"
+      >Investments</a
+    >
   </li>
 </ul>
+
 <!-- list items -->
 <ul class="list-group list-group-flush">
   <li class="container list-group-item">
